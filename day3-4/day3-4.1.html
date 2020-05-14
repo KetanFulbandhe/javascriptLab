@@ -1,0 +1,15 @@
+<html>
+    <head>
+        <title>Factorial</title>
+    </head>
+    <body>
+        <h1>Factrial of 5 is:</h1>
+        <p id="fact"></p>
+        
+        <script>
+            f = n => (n<2)?1:f(n-1)*n;
+
+            document.getElementById("fact").innerHTML= f(5);
+        </script>
+    </body>
+</html>
