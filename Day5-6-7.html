@@ -1,0 +1,124 @@
+<html>
+    <head>
+        <style>
+            .myDiv {
+                position: absolute;
+                background-color: lightblue;
+              text-align: center;
+            }
+            </style>
+    <title>
+        Form Validation In Javascript
+    </title>
+</head>
+    <body>
+        <h1>Form Validation in Javascript</h1></hr>
+        <div class="myDiv">
+            <form action="#" onsubmit="return validation()">
+                <p><label> User ID: </label>
+                    <input type="text" name="uid" id="uid" autocomplete="off"></br></p>
+                    <p id="usernm"></p>
+
+                <p><label> Password: </label>
+                    <input type="text" name="pass" id="pass" autocomplete="off"></br></p>
+                    <p id="pwd"></p>
+
+                <p><label> Mobile No: </label>
+                    <input type="text" name="mobile" id="mobilenumber" autocomplete="off"></br></p>
+                    <p id="mobile"></p>
+                    
+                <p><label>Address : </label>
+                    <input type="text" name="address" id="address" autocomplete="off"></br></p>
+                    <p id="addr"></p>
+
+                <p><label>Age : </label>
+                    <input type="number" name="age" id="age" min="18" max="100" autocomplete="off"></br></p>
+                    <p id="ag"></p>
+
+                <input type="submit" name="submit" value="submit">
+            </form>
+        </div>
+
+        <script type="text/javascript">
+            function validation()
+            {
+                var uid = document.getElementById("uid").value;
+                var pass = document.getElementById("pass").value;
+                var mobilenumber = document.getElementById("mobilenumber").value;
+                var address = document.getElementById("address").value;
+                var age = document.getElementById("age").value;
+
+                //user id not ull
+                if(uid == "")
+                {
+                    document.getElementById("usernm").innerHTML = "User Id must not Empty !!! ";
+                    return false;
+                }
+                //user id length
+                if((uid.length <=2) || (uid.length >=15))
+                {
+                    document.getElementById("usernm").innerHTML = "User Id must be min 3 to max 15 char";
+                    return false;
+                }
+                //user id char only
+                if(!isNaN(uid))
+                {
+                    document.getElementById("usernm").innerHTML = "Only Char allowed";
+                    return false;
+                }
+
+                //password is not null
+                if(pass == "")
+                {
+                    document.getElementById("pwd").innerHTML = "Password must not be null ";
+                    return false;
+                }
+                //password length 8 char and more
+                if((pass.length < 9))
+                {
+                    document.getElementById("pwd").innerHTML = "password must be 8 char +";
+                    return false;
+                }
+
+                //mobile no is not null
+                if(mobilenumber == "")
+                {
+                    document.getElementById("mobile").innerHTML = "Enter Valid mobile Number";
+                    return false;
+                }
+                //mobile no is number only
+                if(isNaN(mobilenumber))
+                {
+                    document.getElementById("mobile").innerHTML = "Enter Number Only";
+                    return false;
+                }
+                //mobile number must be 10 digit long
+                if(mobilenumber.length != 10)
+                {
+                    document.getElementById ("mobile").innerHTML = "Mobile no must be 10 digit Number Only";
+                    return false;
+                }
+
+                //address must not null.
+                if(address == "")
+                {
+                    document.getElementById("addr").innerHTML = "Address must not be Blank";
+                    return false;
+                }
+                
+                //age must not null
+                if(age == "")
+                {
+                    document.getElementById("ag").innerHTML = "age must not Empty";
+                    return false;
+                }
+                if (!age.checkValidity())
+                {
+                    document.getElementById("ag").innerHTML = "age must be between 18 to 100";
+                    return false;
+                }
+            }
+
+        </script>
+    </body>
+</html> 
