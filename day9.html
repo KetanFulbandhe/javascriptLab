@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Day9</title>
+</head>
+<body>
+    <script>
+        //Self Invoking Function
+        (function(){
+            document.write("<h1>Self Invoking Function</h1><br/><b>Ketankumar Fulbandhe</b>");
+        })();
+
+        //Self Invoking Square Function
+        document.write("<br/><br/><h1>Self Invoking Square Function</h1>");
+        var Square = (function(){
+            var x = 5;
+            return x * x;
+        })();
+        document.write("<b>Square of 5 is : </b>" + Square);
+
+        //Paremeter less findsum Function
+        function findSum() {
+        var i, sum =0;
+        for(i = 0; i < arguments.length; i++)
+        {
+            sum = sum + arguments[i];
+        }
+        return sum;
+        } 
+        document.write("<br/><br/><br/><h1>Sum Of Parameterless Function </h1><br/> <b>Addition With 3 Parameter:</b>" +findSum(4, 5, 1));
+        document.write("<br/> <b>Addition With 2 Parameter:</b>" +findSum(4, 5));
+        
+    </script>  
+</body>
+</html>
