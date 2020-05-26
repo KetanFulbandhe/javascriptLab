@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>student data</title>
+</head>
+<body>
+    <h1>Student Data</h1>
+    <script>
+        class Student {
+            constructor(roll_number, name, marks1, marks2, marks3)
+            {
+                if(typeof(roll_number)=="number" &&
+                    typeof(name)=="string" &&
+                    typeof(marks1)=="number" &&
+                    typeof(marks2)=="number" &&
+                    typeof(marks3)=="number")
+                    {
+                        this.roll_number = roll_number;
+                        this.name = name;
+                        this.marks1 = marks1;
+                        this.marks2 = marks2;
+                        this.marks3 = marks3;
+                    }
+                else {
+                    alert("Enter Valid data :");
+                }
+            }
+            //setters
+            set setRollno(n_rollno){
+                if(typeof(n_rollno)=="number") {
+                    this.roll_number = n_rollno;
+                }
+                else{
+                    alert("Roll Number must be number");
+                }
+            }
+            
+            set setName(n_name) {
+                if(typeof(n_name)=="string") {
+                    this.name = n_name;
+                }
+                else {
+                    alert("Name must be string");
+                }
+            }
+
+            set setMark1(n_m1){
+                if(typeof(n_m1)=="number") {
+                    this.marks1 = n_m1;
+                }
+                else {
+                    alert("first mark must be number");
+                }
+            }
+
+            set setMark2(n_m2) {
+                if(typeof(n_m2)=="number") {
+                    this.marks2 = n_m2;
+                }
+                else {
+                    alert("second Marks must be number");
+                }
+            }
+
+            set setMark3(n_m3) {
+                if(typeof(n_m3)=="number") {
+                    this.marks3 = n_m3;
+                }
+                else {
+                    alert("Third marks must be number");
+                }
+            }
+            //Getter
+            get getRollno(){
+                return this.roll_number;
+            }
+            get getName() {
+                return this.name;
+            }
+            get getMarks1(){
+                return this.marks1;
+            }
+            get getMarks2() {
+                return this.marks2;
+            }
+            get getMarks3(){
+                return this.marks3;
+            }
+
+            //total and percentage
+            Tot_Per()
+            {
+                let total=0, percnt=0, maxMark=300;
+                total = this.marks1 + this.marks2 + this.marks3;
+                document.write("<br/>Total is : " +total);
+
+                percnt = (total/maxMark)*100;
+                document.write("<br/>Percentage is : " + percnt);
+
+            }
+            showDetails() {
+                document.write("<h2>Student Data</h2>")
+                document.write("Roll Number : "+this.roll_number+
+                                "<br /> Name : "+this.name+
+                                "<br />Marks 1 :"+this.marks1+
+                                "<br />Marks 2 :"+this.marks2+
+                                "<br />Marks 3 :"+this.marks3);
+            }
+        }
+
+        s1 = new Student (1, "Ketan", 70, 80, 90);
+        s2 = new Student (2, "XXX", 75, 85, 95);
+        s1.showDetails();
+        s1.Tot_Per();
+        s2.showDetails();
+        s2.Tot_Per();        
+
+    </script>
+</body>
+</html>
