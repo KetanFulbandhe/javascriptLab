@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Day10-11-12</title>
+</head>
+
+<body>
+  <div style="margin: 0px auto;">
+    <h1 id="txt1" style="color: red;">Ketankumar Fulbandhe.</h1>
+    <button onclick="changecolor()">Change color</button>
+    <script>
+      function changecolor() {
+        document.getElementById("txt1").style.color = "blue";
+      }
+    </script>
+  </div>
+  <hr>
+  <div style="margin: 0px auto;">
+    <h1 id="nm">Ketankumar Fulbandhe</h1>
+    <button onclick="Align_T()">Align text</button>
+    <script>
+      function Align_T() {
+        document.getElementById("nm").style.textAlign = "right";
+      }
+    </script>
+  </div>
+  <hr>
+  <div id="myDIV" style="background-color: blue;">
+    <h1 id="head" style="color:white">Ketankumar Fulbandhe</h1>
+  </div>
+  <button onclick="altercolor()">Alter Color</button>
+  <script>
+    function altercolor() {
+      const color1 = "white";
+      const color2 = "blue";
+      let bit = true;
+      if (bit == true) {
+        document.getElementById("myDIV").style.backgroundColor = color1;
+        document.getElementById("head").style.color = color2;
+        bit = false;
+      }
+      else {
+        document.getElementById("myDIV").style.backgroundColor = color2;
+        document.getElementById("head").style.color = color1;
+      }
+    }
+  </script>
+  </div>
+  <hr>
+  <div>
+    <form>
+      <input type="text" id="txt" style="width: 200px;" placeholder="Enter Name and choose color"><br><br>
+      <input type="radio" name="ccolor" value="red" onclick="changeclr(this)"> Red<br>
+      <input type="radio" name="ccolor" value="blue" onclick="changeclr(this)"> Blue<br>
+      <input type="radio" name="ccolor" value="green" onclick="changeclr(this)"> Green<br>
+      <form>
+        <script language="javascript">
+          function changeclr(obj) {
+            document.getElementById("txt").style.color = obj.value;
+          }
+        </script>
+  </div>
+  <hr>
+  <br>
+  <input type="text" id="txtbox" placeholder="Enter name here"><br><br>
+    <select id="fontsize">
+        <option value="12">1</option>
+        <option value="14">2</option>
+        <option value="16">3</option>
+        <option value="18">4</option>
+        <option value="20">5</option>
+        <option value="22">6</option>
+        <option value="24">7</option>
+        <option value="26">8</option>
+        <option value="28">9</option>
+        <option value="30">10</option>
+    </select><br><br>
+    <script>
+        var fontsize = document.getElementById('fontsize');
+        fontsize.onchange = function () {
+            var txtbox = document.getElementById("txtbox")
+            txtbox.style.fontSize = this.value + "px";
+        };
+    </script>
+  <hr>
+  <div style="margin: 0px auto;">
+    <input id="num1" placeholder="Enter 1st value"></br><br>
+    <input id="num2" placeholder="Enter 2nd value"></br>
+    </br></br>
+    <input type="radio" value="+" onclick="add()">Addition</input>
+    <input type="radio" value="-" onclick="sub()">Subtract</input>
+    </br></br><input id="answer" placeholder="Answer is . . .">
+  </div>
+  <script>
+    function add() {
+        var num1, num2, res;
+        num1 = Number(document.getElementById("num1").value);
+        num2 = Number(document.getElementById("num2").value);
+        res = num1 + num2;
+        document.getElementById("answer").value = res;
+    }
+    function sub() {
+        var num1, num2, res;
+        num1 = Number(document.getElementById("num1").value);
+        num2 = Number(document.getElementById("num2").value);
+        res = num1 - num2;
+        document.getElementById("answer").value = res;
+    }
+</script>
+
+<hr>
+<div>
+  <p id="p1" name="para">Ketankumar</p><br>
+  <p id="p2" name="para">Lawaji</p><br>
+  <p id="p3" name="para">Fulbandhe</p><br>
+  <p id="Count" name="para">Count of p tag with blue background is:</p><br><br>
+  <button onclick="countTag()">countTag</button>
+</div>
+<script>
+  function countTag(){
+      var ele = document.getElementsByTagName("p");
+      var y = ele.length;
+      for(let i=0; i<y; i++)
+      {
+          ele[i].style.background = "blue";
+      }
+      document.getElementById("Count").innerHTML
+      = "Count of p tag with blue background is: " + y;
+  }
+</script>
+<hr>
+<ol>
+  <li>Kaushal</li>
+  <li>Ketankumar</li>
+  <li>Akshay</li>
+</ol>
+<button onclick="Delete()">Delete first node</button>
+<script>
+  function Delete() {
+      var del = document.getElementsByTagName("li");
+      del[0].remove();
+  }
+</script>
+<hr>
+<div style="margin: 0px auto;">
+  <br><textarea name="txt" id="txtbox" cols="30" rows="10" onchange="showtxt()" placeholder="Enter text it will display in span tag below"></textarea><br><br>
+  <SPan id="span1">Text form span</SPan>
+</div>
+<script>
+  function showtxt() {
+      var txt = document.getElementById("txtbox").value;
+      document.getElementById("span").innerHTML = txt;
+  }
+</script>
+<hr>
+<div>
+        <textarea name="txt" id="txtbox" onchange="showtxt(this.value)" ></textarea><br><br>
+        <SPan id="span2">Text form span</SPan>
+    </div>
+    <script>
+        function showtxt(val) {
+            if(val == "" || val == null) {
+                alert("box must not be empty");
+            }
+            else {
+                document.getElementById("span2").innerHTML = val;
+            }
+        }
+    </script>
+    <hr>
+    <h1>Password validation in Javascript</h1> <br />
+    <div style="justify-content: center; align-items: center;">
+        <input type="text" id="pass" size="8" maxlength="8"><br>
+        <p id="demo"></p><br>
+        <input type="button" value="validate" onclick="chkpwd()">
+    </div>
+    <script>
+        chkpwd = function (validate) {
+            var str = document.getElementById("pass").value;
+            if (str.length < 8) {
+                document.getElementById("demo").innerHTML = "password length must be 8 char";
+                document.getElementById("demo").style.color = "red";
+                return ("too_short");
+            }
+            else if (str.search(/[0-9]/) == -1) {
+                document.getElementById("demo").innerHTML = "atleast one number required";
+                document.getElementById("demo").style.color = "red";
+                return ("please enter number");
+            }
+            else if (str.search(/[a-z]/) == -1) {
+                document.getElementById("demo").innerHTML = "atleast one small letter required";
+                document.getElementById("demo").style.color = "red";
+                return ("please enter small letter");
+            }
+            else if (str.search(/[A-Z]/) == -1) {
+                document.getElementById("demo").innerHTML = "atleast one CAPITAL letter required";
+                document.getElementById("demo").style.color = "red";
+                return ("please enter Capital letter");
+            }
+            else if (str.search(/[!\@\#\$\^\%\&\(\)\_\+\.\,\;\:]/) == -1) {
+                document.getElementById("demo").innerHTML = "atleast one Special char required";
+                document.getElementById("demo").style.color = "red";
+                return ("please enter one special char letter");
+            }
+            else {
+                document.getElementById("demo").innerHTML = "Password Accepted";
+                document.getElementById("demo").style.color = "green";
+                return ("OK");
+            }
+        }
+    </script>
+    <hr>
+    <form action="#" method="post" class="demoForm" id="demoForm">
+      <fieldset>
+          <legend style="text-align: center; font-style: bold;">Book Shop</legend>
+
+          <h1>Tick The Box To Purches</h1>
+
+          <div id="books">Books:
+              <label><input type="checkbox" name="Fire Wing" value="250.0" /> Fire Wing</label>
+              <label><input type="checkbox" name="Harry Poter" value="100.50" /> Harry Poter</label>
+              <label><input type="checkbox" name="Geeta" value="300.60" /> Geeta</label>
+          </div>
+
+          <p>
+              <label>Total: ₹ <input type="text" name="total" value="0.00" readonly="readonly" /></label>
+          </p>
+      </fieldset>
+      <script>
+          function attachCheckboxHandlers() {
+              var el = document.getElementById('books');
+              var bks = el.getElementsByTagName('input');
+
+              for (var i = 0, len = bks.length; i < len; i++) {
+                  if (bks[i].type === 'checkbox') {
+                      bks[i].onclick = updateTotal;
+                  }
+              }
+          }
+
+          function updateTotal(e) {
+              var form = this.form;
+              var val = parseFloat(form.elements['total'].value);
+              
+              if (this.checked) {
+                  val += parseFloat(this.value);
+              } else {
+                  val -= parseFloat(this.value);
+              }
+
+              form.elements['total'].value = formatDecimal(val);
+          }
+
+          function formatDecimal(val, n) {
+              n = n || 2;
+              var str = "" + Math.round(parseFloat(val) * Math.pow(10, n));
+              while (str.length <= n) {
+                  str = "0" + str;
+              }
+              var pt = str.length - n;
+              return str.slice(0, pt) + "." + str.slice(pt);
+          }
+
+          attachCheckboxHandlers();
+      </script>
+  </form>
+</body>
+
+</html>
