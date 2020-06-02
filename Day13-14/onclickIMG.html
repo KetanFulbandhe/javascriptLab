@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Onclick Image</title>
+    
+</head>
+<body style="background-color: black; text-align: center;" >
+    <button style="height: 25px; background-color: orangered; color:rgb(34, 248, 15); 
+    border-radius: 5px;" onclick="showIMG()">Image</button>
+    <script>
+        function showIMG() {
+            url = "img/bgimg.webp";
+            img = '<img src="'+url+'">';
+            var win = window.open("", "newWindow", "width=800,height=450");
+            win.document.write(img);
+        }
+    </script>
+</body>
+</html>
