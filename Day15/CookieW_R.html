@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>cookie</title>
+</head>
+<body>
+    <form action="#" name="myform">
+        Enter cookie <input type="text" name="name"><br> <br>
+        <input type="button" value="create" onclick="clicked()">
+        <p id="create"></p><br>
+        <input type="button" value="read" onclick="read_c()">
+        <p id="read"></p>
+    </form>
+    <script>
+        function clicked() {
+            console.log("function clicked");
+            var cookieValue = escape(document.myform.name.value + ";");
+            //console.log(cookieValue);
+            document.getElementById("create").innerHTML = "Cookie created as : " +cookieValue;
+            document.cookie="name =" + cookieValue;
+        }
+        function read_c() {
+            var allcookies = unescape(document.cookie);
+            //console.log(allcookies);
+            document.getElementById("read").innerHTML = "Cookie Data : " +allcookies;
+        }
+    </script>
+</body>
+</html>
