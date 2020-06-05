@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resize image on click</title>
+    <script src="jqueery.js"></script>
+    <script>
+        $(document).ready(function(){
+            $("button").click(function(){
+                $("img").animate({
+                   height: '300px',
+                   width: '250px'
+                });
+            });
+        });
+    </script>
+</head>
+<body>
+    <button>Click to increase size</button><br><br>
+    <img src="img/bgimg.webp" id="img" height="150px" width="150px" alt="Ketan">
+</body>
+</html>

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hide with message</title>
+    <script src="jqueery.js"></script>
+    <script>
+        $(document).ready(function(){
+            $("button").click(function(){
+                $("#para").hide();
+                alert("Done with hiding . . ."); //chaining
+            })
+        });
+    </script>
+</head>
+<body>
+    <button>Cick To Hide</button><br><br>
+    <p id="para">My name is ketankumar Fulbandhe.</p>
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>slide Toggle</title>
+    <script src="jqueery.js"></script>
+    <script>
+        $(document).ready(function(){
+            $("#btn").click(function(){
+                $("#h3").slideUp("slow");
+                $("h3").slideDown(3000);
+            });
+        });
+    </script>
+    <style>
+        #h3, #btn{
+            padding: 3px;
+            text-align: center;
+            background-color: blueviolet;
+            border: solid 1px orangered;
+            border-radius: 5px;
+        }
+        #h3{
+            padding: 25px;
+        }
+    </style>
+</head>
+<body>
+    <button id="btn">Click to toggle the name</button><br><br>
+    <h3 id="h3">Ketankumar Fulbandhe</h3>
+</body>
+</html>
