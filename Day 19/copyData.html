@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Copy Data from input box</title>
+<script src="jqueery.js"></script>
+<script>
+    $(document).ready(function(){
+        $("button").click(function(){
+            var x = $("#txt1").val();
+            //console.log(x);
+            $("#txt2").val(x);
+        });
+    });
+</script>
+</head>
+<body>
+    <input type="text" id="txt1" placeholder="Enter Data to copy..."><br><br>
+    <button>Copy</button><br><br>
+    <input type="text" id="txt2" placeholder="Copied Data is...">
+</body>
+</html>

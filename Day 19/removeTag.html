@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Remove Tag From Page</title>
+    <script src="jqueery.js"></script>
+    <script>
+        $(document).ready(function(){
+            $("button").click(function(){
+                $("#para").remove();
+            });
+        });
+    </script>
+</head>
+<body>
+    <p id="para">
+        My name is Ketankumar Fulbandhe I done my Graduation in Engineering, from SGBAU (Sant Gadge Baba Amravati University)
+        i have done my engineering in "Computer Science And Engineering", iam a hardworking computer Engineer.
+    </p>
+    <button>Click to Hide</button>
+</body>
+</html>

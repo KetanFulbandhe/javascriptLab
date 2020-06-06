@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Remove Border of image when mouse over</title>
+    <script src="jqueery.js"></script>
+    <script>
+        $(document).ready(function(){
+            $("img").hover(function(){
+                $("img").removeClass("img")
+            });
+        });
+    </script>
+    <style>
+        .img {
+            border-style: solid; 
+            border-color: red;
+        }
+    </style>
+</head>
+<body>
+    <img src="img/bgimg.webp" alt="image" class="img" style="height: 300px; width: 250px;">
+</body>
+</html>

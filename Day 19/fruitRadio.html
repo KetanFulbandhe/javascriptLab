@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fruit on radio</title>
+</head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script>
+    $(document).ready(function(){
+        $("input:radio").click(function(){
+            $("ol").append("<li>"+ $(this).val() +"</li>");
+        });
+    });
+</script>
+<body>
+    <h1>select radio button to add into list</h1>
+    <form>
+        <input type="radio" id="r1" value="Pineapple">Pineapple <br>
+        <input type="radio" id="r2" value="Banana">Banana <br>
+        <input type="radio" id="r3" value="Apple">Apple <br>
+        <input type="radio" id="r4" value="Mango">Mango <br>
+    </form>
+    <ol>
+    </ol>
+    
+</body>
+</html>

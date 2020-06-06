@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Colored text as radio button</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $("#red").click(function(){
+                $("#text").css("color","red");
+            });
+            $("#blue").click(function(){
+                $("#text").css("color","blue");
+            });
+            $("#green").click(function(){
+                $("#text").css("color","green");
+            });
+        });
+    </script>
+</head>
+<body>
+    <input type="radio" id="red" name="red" value="red"> RED <br>
+    <input type="radio" id="blue" name="blue" value="blue"> BLUE <br>
+    <input type="radio" id="green" name="green" value="green"> GREEN <br><br>
+    <input type="text" id="text" placeholder="Select above button and type here" style="width: 210px;">
+</body>
+</html>
